@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const authRoutes = require('./routes/auth')
+const authRoutes = require('./routes/auth');
+const sneakerRoutes = require('./routes/sneakers');
 
 dotenv.config();
 
@@ -13,9 +14,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/api/auth', authRoutes);
+app.use('/api/sneakers', sneakerRoutes);
 
 // Test route
-
 app.get('/', (req, res) => {
   res.send('Server is running!');
 });
