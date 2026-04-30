@@ -29,3 +29,8 @@ mongoose.connect(process.env.MONGO_URI)
     });
   })
   .catch((err) => console.log(err));
+
+  process.on('unhandledRejection', (err) => {
+  console.error('Unhandled Rejection:', err.message);
+  process.exit(1);
+});
