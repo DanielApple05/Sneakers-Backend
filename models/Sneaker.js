@@ -13,4 +13,4 @@ const SneakerSchema = new mongoose.Schema({
   description: { type: String, required: true }
 },);
 
-module.exports = mongoose.model('Sneaker', SneakerSchema);
+module.exports = mongoose.model('sneaker', SneakerSchema);
