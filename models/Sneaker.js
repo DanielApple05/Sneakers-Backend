@@ -11,6 +11,8 @@ const SneakerSchema = new mongoose.Schema({
   brand: { type: String, required: true },
   imageThumbnails: [{ type: String }],
   description: { type: String, required: true }
+}, { 
+  id: false  // ← disables the virtual 'id' that mirrors '_id'
 });
 
 module.exports = mongoose.model('Sneaker', SneakerSchema);
